@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CourtCast — Live Court Intelligence for Sports Clubs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Court<span>Cast</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#designer" style="color:var(--green);font-weight:600">Try It →</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Demo</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHam" aria-label="Open menu" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products" onclick="closeMobileMenu()">Products</a>
+  <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#designer" onclick="closeMobileMenu()" style="color:var(--green);font-weight:600">Try It →</a>
+  <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+  <a href="#contact" onclick="closeMobileMenu()" style="color:var(--green);font-weight:700">Book a Demo →</a>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span><span class="tdot">●</span>Live CourtReserve Integration</span>
+    <span><span class="tdot">●</span>Court Status Displays</span>
+    <span><span class="tdot">●</span>Live Scoreboards</span>
+    <span><span class="tdot">●</span>Mobile Score Controllers</span>
+    <span><span class="tdot">●</span>Real-Time Updates</span>
+    <span><span class="tdot">●</span>Built for Pickleball &amp; Racquet Sports</span>
+    <span><span class="tdot">●</span>Live CourtReserve Integration</span>
+    <span><span class="tdot">●</span>Court Status Displays</span>
+    <span><span class="tdot">●</span>Live Scoreboards</span>
+    <span><span class="tdot">●</span>Mobile Score Controllers</span>
+    <span><span class="tdot">●</span>Real-Time Updates</span>
+    <span><span class="tdot">●</span>Built for Pickleball &amp; Racquet Sports</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-lines"></div>
+  <div class="hero-stripe"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>CourtReserve Powered</div>
+    <h1>YOUR COURTS.<br><em>LIVE ON SCREEN.</em></h1>
+    <p>Real-time court status displays, live scoreboards, and score bugs — all driven by your existing CourtReserve data. Zero extra data entry. Always accurate.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a Demo →</a>
+      <a href="#designer" class="btn-secondary">Design Your Display ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-mockup">
+    <div class="mockup-screen">
+      <div class="mockup-bar">
+        <span class="mockup-bar-title">LEVELUP PICKLEBALL — ALL COURTS LIVE</span>
+        <span class="mockup-bar-time"><span id="heroBarTime">10:01 AM</span> ● Updated just now</span>
+      </div>
+      <div class="mockup-courts">
+        <div class="mc" style="background:rgba(255,100,50,0.25);border:1px solid rgba(255,100,50,0.4)"><div class="mc-num">16</div><div class="mc-status" style="color:#ff9966">● In Progress</div><div class="mc-event">Morning Drop-Ins 4.0</div><div class="mc-time">7:00–11:00 AM</div><div class="mc-badge" style="background:rgba(255,100,50,0.3);color:#ffaa88">37m left</div></div>
+        <div class="mc" style="background:rgba(255,100,50,0.25);border:1px solid rgba(255,100,50,0.4)"><div class="mc-num">15</div><div class="mc-status" style="color:#ff9966">● In Progress</div><div class="mc-event">Morning Drop-Ins 4.0</div><div class="mc-time">7:00–11:00 AM</div><div class="mc-badge" style="background:rgba(255,100,50,0.3);color:#ffaa88">37m left</div></div>
+        <div class="mc" style="background:rgba(147,112,219,0.25);border:1px solid rgba(147,112,219,0.4)"><div class="mc-num">14</div><div class="mc-status" style="color:#c9b0f0">● In Progress</div><div class="mc-event">Drop-Ins 3.5–3.9</div><div class="mc-time">7:00–11:00 AM</div><div class="mc-badge" style="background:rgba(147,112,219,0.3);color:#c9b0f0">37m</div></div>
+        <div class="mc" style="background:rgba(147,112,219,0.25);border:1px solid rgba(147,112,219,0.4)"><div class="mc-num">13</div><div class="mc-status" style="color:#c9b0f0">● In Progress</div><div class="mc-event">Drop-Ins 3.5–3.9</div><div class="mc-time">7:00–11:00 AM</div><div class="mc-badge" style="background:rgba(147,112,219,0.3);color:#c9b0f0">37m</div></div>
+        <div class="mc" style="background:rgba(147,112,219,0.18);border:1px solid rgba(147,112,219,0.32)"><div class="mc-num">12</div><div class="mc-status" style="color:#c9b0f0">● In Progress</div><div class="mc-event">Drop-Ins 3.5–3.9</div><div class="mc-time">7:00–11:00 AM</div></div>
+        <div class="mc" style="background:rgba(147,112,219,0.18);border:1px solid rgba(147,112,219,0.32)"><div class="mc-num">11</div><div class="mc-status" style="color:#c9b0f0">● In Progress</div><div class="mc-event">Drop-Ins 3.5–3.9</div><div class="mc-time">7:00–11:00 AM</div></div>
+        <div class="mc" style="background:rgba(0,200,107,0.2);border:1px solid rgba(0,200,107,0.35)"><div class="mc-num">10</div><div class="mc-status" style="color:#00e876">● In Progress</div><div class="mc-event">DUPR Women's League</div><div class="mc-time">9:30–11:30 AM</div></div>
+        <div class="mc" style="background:rgba(0,200,107,0.2);border:1px solid rgba(0,200,107,0.35)"><div class="mc-num">9</div><div class="mc-status" style="color:#00e876">● In Progress</div><div class="mc-event">DUPR Women's League</div><div class="mc-time">9:30–11:30 AM</div></div>
+        <div class="mc" style="background:rgba(0,200,107,0.15);border:1px solid rgba(0,200,107,0.28)"><div class="mc-num">8</div><div class="mc-status" style="color:#00e876">● In Progress</div><div class="mc-event">Drop-Ins 3.0–3.49</div><div class="mc-time">7:00–11:00 AM</div></div>
+        <div class="mc" style="background:rgba(0,180,200,0.2);border:1px solid rgba(0,180,200,0.35)"><div class="mc-num">7</div><div class="mc-status" style="color:#00cfff">● In Progress</div><div class="mc-event">Ladder League 2.0–3.4</div><div class="mc-time">10:00 AM–12:00 PM</div></div>
+        <div class="mc" style="background:rgba(0,180,200,0.15);border:1px solid rgba(0,180,200,0.28)"><div class="mc-num">6</div><div class="mc-status" style="color:#00cfff">● In Progress</div><div class="mc-event">Ladder League 2.0–3.4</div><div class="mc-time">10:00 AM–12:00 PM</div></div>
+        <div class="mc" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1)"><div class="mc-num">1</div><div class="mc-status" style="color:rgba(255,255,255,0.28)">No Event</div><div class="mc-status" style="color:#00cfff;margin-top:5px">Upcoming</div><div class="mc-event">LevelUp Clinic</div><div class="mc-time">12:30–1:45 PM</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-bar">
+  <span class="trust-label">Works with</span>
+  <div class="trust-items">
+    <span class="trust-item">CourtReserve</span>
+    <span class="trust-item">Pickleball Clubs</span>
+    <span class="trust-item">Tennis Facilities</span>
+    <span class="trust-item">Racquetball Centers</span>
+    <span class="trust-item">Multi-Sport Venues</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section style="padding-top:80px;padding-bottom:80px;">
+  <div class="stats-row">
+    <div class="stat-item"><div class="stat-num">16<span>+</span></div><div class="stat-label">Courts supported per facility</div></div>
+    <div class="stat-item"><div class="stat-num">60<span>s</span></div><div class="stat-label">Auto-refresh from CourtReserve</div></div>
+    <div class="stat-item"><div class="stat-num"><span>∞</span></div><div class="stat-label">Screens per location, no per-display fee</div></div>
+    <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">Hours of staff input required to operate</div></div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-label">What We Build</div>
+  <h2 class="section-title">THREE PRODUCTS.<br>ONE INTEGRATION.</h2>
+  <p class="section-sub">Connect to CourtReserve once. Deploy across every screen in your facility — from the lobby wall to the end of each court.</p>
+
+  <div class="products-grid">
+    <div class="product-card featured">
+      <div class="featured-tag">Most Popular</div>
+      <div class="product-icon green">📺</div>
+      <h3>All Courts Overview</h3>
+      <p>A full-facility live dashboard showing every court at a glance. Perfect for lobby TVs, front desk monitors, and entrance displays.</p>
+      <ul class="product-features">
+        <li>Live event name, time &amp; status per court</li>
+        <li>Color-coded by activity or skill level</li>
+        <li>Upcoming event preview per court</li>
+        <li>Time remaining countdown per booking</li>
+        <li>Auto-refresh — zero staff input needed</li>
+        <li>Custom branding: colors + logo</li>
+      </ul>
+    </div>
+    <div class="product-card">
+      <div class="product-icon blue">🏆</div>
+      <h3>Live Scoreboard</h3>
+      <p>A full-screen scoreboard for a single court. Staff or players update scores from their phone — it reflects on-screen instantly via Firebase.</p>
+      <ul class="product-features">
+        <li>Large-format score display</li>
+        <li>Team names &amp; player rosters from CourtReserve</li>
+        <li>Mobile controller for score input</li>
+        <li>Game and set tracking</li>
+        <li>Swap sides with one tap</li>
+        <li>Event info and round details</li>
+      </ul>
+    </div>
+    <div class="product-card">
+      <div class="product-icon slate">📡</div>
+      <h3>Score Bug Overlay</h3>
+      <p>A compact status bar at the bottom of any screen — overlaying a camera feed or any content. Sports-broadcast style, for your courts.</p>
+      <ul class="product-features">
+        <li>Court number, event, and player name</li>
+        <li>Time remaining &amp; upcoming event</li>
+        <li>Live clock display</li>
+        <li>Transparent overlay on any background</li>
+        <li>Ideal for per-court wall displays</li>
+        <li>Works over live camera streams</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="how-section">
+  <div class="section-label">Setup</div>
+  <h2 class="section-title">LIVE IN AN AFTERNOON.</h2>
+  <p class="section-sub">No custom hardware. No IT department. If you run CourtReserve, you're 90% of the way there.</p>
+  <div class="steps-grid">
+    <div class="step"><div class="step-num">01</div><h4>Connect to CourtReserve</h4><p>We tap into your existing CourtReserve API with read-only access. No data migration, no new software for your staff to learn.</p></div>
+    <div class="step"><div class="step-num">02</div><h4>We Configure Your Display</h4><p>Your branded display pages go up with your club's colors, logo, and court layout. Each page is a simple URL opened on any screen.</p></div>
+    <div class="step"><div class="step-num">03</div><h4>Plug In Any Screen</h4><p>Smart TV, Chromecast, Fire Stick, tablet, or any browser. No app installs, no special hardware required.</p></div>
+    <div class="step"><div class="step-num">04</div><h4>It Just Runs</h4><p>Displays update automatically from your live CourtReserve schedule. Your staff never touches it — it's always current.</p></div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section>
+  <div class="demo-section">
+    <div>
+      <div class="section-label">Score Bug</div>
+      <h2 class="section-title">BROADCAST QUALITY.<br>AT COURT LEVEL.</h2>
+      <p class="section-sub" style="margin-bottom:40px;">Mount a screen at the end of each court. The Score Bug shows who's playing, time remaining, and who's up next — live from CourtReserve.</p>
+      <div class="demo-features">
+        <div class="demo-feature">
+          <div class="demo-feature-icon">⚡</div>
+          <div class="demo-feature-text"><h5>Powered by CourtReserve Bookings</h5><p>Player names and events come directly from your reservations. No manual entry at the court level.</p></div>
+        </div>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">📱</div>
+          <div class="demo-feature-text"><h5>Mobile Score Controller</h5><p>Players or staff tap + / – on their phone to update the score. The display refreshes instantly via Firebase real-time sync.</p></div>
+        </div>
+        <div class="demo-feature">
+          <div class="demo-feature-icon">🎨</div>
+          <div class="demo-feature-text"><h5>Custom Branded</h5><p>Your logo, your colors. Looks like your club built it in-house — because it's built specifically for your club.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="demo-visual">
+      <div class="scorebug-demo">
+        <div class="scorebug-court">1</div>
+        <div class="scorebug-event">
+          <div class="scorebug-status">● In Progress</div>
+          <div class="scorebug-name">P. Hittinger</div>
+          <div class="scorebug-time-block">10:00 AM – 11:00 AM</div>
+        </div>
+        <div class="scorebug-timeleft"><div class="scorebug-tl-label">Time Left</div><div class="scorebug-tl-num">58m</div></div>
+        <div class="scorebug-upcoming">
+          <div class="scorebug-up-label">Upcoming</div>
+          <div class="scorebug-up-name">LevelUp 2.0–2.9 Clinic</div>
+          <div class="scorebug-up-time">12:30 PM – 1:45 PM</div>
+        </div>
+        <div class="scorebug-clock"><div class="scorebug-clock-label">Current Time</div><div class="scorebug-clock-time">10:01 AM</div></div>
+      </div>
+      <div style="background:var(--bg2);border:1.5px solid var(--border);border-radius:12px;overflow:hidden;">
+        <div style="background:var(--bg3);padding:10px 16px;border-bottom:1px solid var(--border);">
+          <span style="font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Score Bug — Court 1 — Full Screen View</span>
+        </div>
+        <div style="padding:32px;display:flex;align-items:center;justify-content:center;min-height:140px;">
+          <div style="text-align:center;">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--cyan);margin-bottom:8px;">LEVELUP PICKLEBALL CLUB</div>
+            <div style="font-size:1.05rem;font-weight:600;color:var(--ink)">P. Hittinger</div>
+            <div style="font-size:0.8rem;color:var(--muted);margin-top:4px">10:00 AM – 11:00 AM</div>
+            <div style="margin-top:14px;font-size:0.72rem;color:var(--muted);font-style:italic">Score bug renders as transparent overlay on any camera feed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGNER SECTION -->
+<section id="designer" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:96px 6vw;">
+  <div style="text-align:center;margin-bottom:56px">
+    <div class="section-label" style="justify-content:center;display:flex">Try It Yourself</div>
+    <h2 class="section-title" style="text-align:center">DESIGN YOUR<br><em style="font-style:normal;color:var(--green)">DISPLAY IN MINUTES.</em></h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center">Configure your screen size, lay out your score bug, choose your court display fields, and design your scoreboard. This is exactly what we build for your facility.</p>
+  </div>
+
+  <!-- STEP TABS -->
+  <div style="display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;justify-content:center" id="dsTabs">
+    <button class="ds-tab ds-tab-on" onclick="dsGoto(0,this)">① Screen Size</button>
+    <button class="ds-tab" onclick="dsGoto(1,this)">② Score Bug</button>
+    <button class="ds-tab" onclick="dsGoto(2,this)">③ All Courts</button>
+    <button class="ds-tab" onclick="dsGoto(3,this)">④ Scoreboard + Controller</button>
+  </div>
+
+  <!-- STEPS -->
+  <div id="dsPages">
+
+    <!-- ── STEP 0: SCREEN SIZE ── -->
+    <div class="ds-page ds-page-on" id="ds0">
+      <!-- 3-col layout: presets | mockup | stats+options -->
+      <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:24px;align-items:start">
+
+        <!-- COL 1: Presets + custom input -->
+        <div>
+          <div class="ds-panel">
+            <div class="ds-phd">Select Your Screen Size</div>
+            <div class="ds-szgrid" style="grid-template-columns:repeat(2,1fr)">
+              <div class="ds-szcard ds-szcard-on" onclick="dsPickSize(845,385,this)"><div class="ds-dims">845×385</div><div class="ds-szname">CourtCast Default</div></div>
+              <div class="ds-szcard" onclick="dsPickSize(1920,1080,this)"><div class="ds-dims">1920×1080</div><div class="ds-szname">Full HD 1080p</div></div>
+              <div class="ds-szcard" onclick="dsPickSize(3840,2160,this)"><div class="ds-dims">3840×2160</div><div class="ds-szname">4K UHD</div></div>
+              <div class="ds-szcard" onclick="dsPickSize(1280,720,this)"><div class="ds-dims">1280×720</div><div class="ds-szname">HD 720p</div></div>
+              <div class="ds-szcard" onclick="dsPickSize(1080,1920,this)"><div class="ds-dims">1080×1920</div><div class="ds-szname">Portrait / Kiosk</div></div>
+              <div class="ds-szcard" onclick="dsPickSize(800,480,this)"><div class="ds-dims">800×480</div><div class="ds-szname">Small Display</div></div>
+            </div>
+            <div style="font-size:11px;color:var(--muted);text-align:center;margin:8px 0 10px">— or enter custom dimensions —</div>
+            <div style="display:grid;grid-template-columns:1fr 20px 1fr;gap:8px;align-items:center">
+              <div><label class="ds-lbl">Width (px)</label><input class="ds-inp" type="number" id="dsCW" value="845" oninput="dsCustomSize()"></div>
+              <div style="text-align:center;font-size:16px;color:var(--muted);font-weight:300;padding-top:16px">×</div>
+              <div><label class="ds-lbl">Height (px)</label><input class="ds-inp" type="number" id="dsCH" value="385" oninput="dsCustomSize()"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COL 2: Screen mockup (aspect-ratio aware) -->
+        <div style="display:flex;flex-direction:column;align-items:center;padding-top:4px">
+          <div style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;text-align:center">Preview</div>
+
+          <!-- outer frame that constrains the mockup -->
+          <div id="dsMockFrame" style="width:220px;height:260px;display:flex;align-items:center;justify-content:center">
+            <div id="dsMock" style="background:#0a0f1e;border-radius:8px;border:2px solid #1e2a3a;position:relative;overflow:hidden;cursor:ns-resize;transition:width .35s,height .35s;box-shadow:0 8px 32px rgba(0,0,0,.18)">
+              <!-- screen shine -->
+              <div style="position:absolute;top:0;left:0;right:0;height:40%;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent);pointer-events:none;z-index:20"></div>
+              <div id="dsMockAd" style="position:absolute;top:0;left:0;right:0;background:linear-gradient(160deg,#0d2040,#0a1830);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center;padding:6px">
+                  <div style="font-size:7px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3)">Ad Zone</div>
+                  <div style="font-size:10px;font-family:'DM Mono',monospace;color:rgba(255,255,255,.5);margin-top:2px" id="dsMockAdLbl">314px</div>
+                </div>
+              </div>
+              <div id="dsMockDiv" style="position:absolute;left:0;right:0;height:5px;background:#00C96B;cursor:ns-resize;z-index:10;display:flex;align-items:center;justify-content:center;box-shadow:0 0 8px rgba(0,201,107,.6)">
+                <div style="width:22px;height:2px;background:rgba(255,255,255,.8);border-radius:2px;pointer-events:none"></div>
+              </div>
+              <div id="dsMockBug" style="position:absolute;left:0;right:0;bottom:0;background:#060c18;border-top:1px solid rgba(0,207,255,.2);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center;padding:4px">
+                  <div style="font-size:6px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.25)">Score Bug</div>
+                  <div style="font-size:9px;font-family:'DM Mono',monospace;color:rgba(0,207,255,.7);margin-top:1px" id="dsMockBugLbl">71px</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:8px">↕ Drag the green line</div>
+          <div style="font-size:10px;color:var(--green);font-weight:600;font-family:'DM Mono',monospace;margin-top:4px;text-align:center" id="dsMockAspect">845 × 385</div>
+        </div>
+
+        <!-- COL 3: Zone stats + options -->
+        <div>
+          <div class="ds-panel">
+            <div class="ds-phd">Zone Split</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+              <div style="background:#f0faf5;border:1px solid #b8e4ca;border-radius:8px;padding:12px 14px">
+                <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px">Ad Zone</div>
+                <div style="display:flex;align-items:baseline;gap:6px">
+                  <div style="font-size:28px;font-weight:700;color:var(--green);font-family:'DM Mono',monospace;line-height:1" id="dsAdHLbl">314px</div>
+                  <div style="font-size:12px;color:var(--muted)" id="dsAdPct">81.6%</div>
+                </div>
+              </div>
+              <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px 14px">
+                <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:3px">Score Bug Strip</div>
+                <div style="display:flex;align-items:baseline;gap:6px">
+                  <div style="font-size:28px;font-weight:700;color:var(--ink2);font-family:'DM Mono',monospace;line-height:1" id="dsBugHLbl">71px</div>
+                  <div style="font-size:12px;color:var(--muted)" id="dsBugPct">18.4%</div>
+                </div>
+              </div>
+              <div style="background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center">
+                <div style="font-size:11px;color:var(--muted)">Total screen height</div>
+                <div style="font-size:16px;font-weight:700;color:var(--ink);font-family:'DM Mono',monospace" id="dsTotalLbl">385px</div>
+              </div>
+            </div>
+            <!-- summary -->
+            <div style="border-top:1px solid var(--border);padding-top:12px">
+              <div style="font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px">Your Configuration</div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <div style="display:flex;justify-content:space-between;font-size:12px"><span style="color:var(--muted)">Screen</span><b id="dsSumScreen" style="color:var(--ink);font-family:'DM Mono',monospace;font-size:11px">845 × 385</b></div>
+                <div style="display:flex;justify-content:space-between;font-size:12px"><span style="color:var(--muted)">Ad zone</span><b id="dsSumAd" style="color:var(--ink)">314px</b></div>
+                <div style="display:flex;justify-content:space-between;font-size:12px"><span style="color:var(--muted)">Score bug</span><b id="dsSumBug" style="color:var(--ink)">71px</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-panel">
+            <div class="ds-phd">Periodic Pop-Up Overlay</div>
+            <div class="ds-togrow">
+              <div><div class="ds-toglbl">Enable timed overlay</div><div style="font-size:11px;color:var(--muted);margin-top:2px">Periodically replaces the ad zone with live court info</div></div>
+              <div class="ds-tog" id="dsPopTog" onclick="dsTog(this,'dsPopSet')"></div>
+            </div>
+            <div id="dsPopSet" style="display:none;margin-top:14px">
+
+              <!-- TIMING -->
+              <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Timing</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+                <div><label class="ds-lbl">Pop up every (minutes)</label><input class="ds-inp" type="number" id="dsPopEvery" value="15" min="1" oninput="dsLivePopPreview()"></div>
+                <div><label class="ds-lbl">Stay visible for (seconds)</label><input class="ds-inp" type="number" id="dsPopFor" value="30" min="5" oninput="dsLivePopPreview()"></div>
+              </div>
+
+              <!-- SIZE -->
+              <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Pop-Up Size</div>
+              <div style="margin-bottom:6px"><label class="ds-lbl">Height (% of screen)</label>
+                <input type="range" id="dsPopHPct" min="10" max="100" value="25"
+                  style="width:100%;accent-color:var(--green);margin:6px 0 2px"
+                  oninput="dsPopSizeChange()">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <span style="font-size:11px;color:var(--muted)">10% (thin strip)</span>
+                  <span style="font-size:14px;font-weight:700;color:var(--green);font-family:'DM Mono',monospace" id="dsPopHPctLbl">25%</span>
+                  <span style="font-size:11px;color:var(--muted)">100% (full screen)</span>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+                <div><label class="ds-lbl">Width (% of screen)</label>
+                  <select class="ds-inp" id="dsPopW" onchange="dsLivePopPreview()">
+                    <option value="100">Full width (100%)</option>
+                    <option value="75">Three quarters (75%)</option>
+                    <option value="50">Half width (50%)</option>
+                    <option value="33">One third (33%)</option>
+                  </select>
+                </div>
+                <div><label class="ds-lbl">Position</label>
+                  <select class="ds-inp" id="dsPopPos" onchange="dsLivePopPreview()">
+                    <option value="bottom">Bottom of screen</option>
+                    <option value="top">Top of screen</option>
+                    <option value="center">Center of screen</option>
+                    <option value="left">Left side</option>
+                    <option value="right">Right side</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- CONTENT -->
+              <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Content</div>
+              <div style="margin-bottom:10px"><label class="ds-lbl">What to display</label>
+                <select class="ds-inp" id="dsPopWhat" onchange="dsPopWhatChange()">
+                  <option value="event">Current court event</option>
+                  <option value="allcourts">All courts overview</option>
+                  <option value="upcoming">Upcoming events list</option>
+                  <option value="custom">Custom message</option>
+                </select>
+              </div>
+              <div id="dsPopCustomMsg" style="display:none;margin-bottom:10px">
+                <label class="ds-lbl">Custom message text</label>
+                <input class="ds-inp" type="text" id="dsPopMsg" placeholder="e.g. Restrooms on left · Pro shop open till 8pm" oninput="dsLivePopPreview()">
+              </div>
+
+              <!-- HEADER LABEL -->
+              <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Header Label</div>
+              <div style="display:grid;grid-template-columns:1fr auto;gap:10px;margin-bottom:14px">
+                <div><label class="ds-lbl">Label text</label><input class="ds-inp" type="text" id="dsPopLabel" value="Now On Court" placeholder="e.g. Skill Level, Event, Now Playing" oninput="dsLivePopPreview()"></div>
+                <div><label class="ds-lbl">Color</label><input class="ds-inp" style="height:34px;padding:3px;cursor:pointer;width:60px" type="color" id="dsPopLabelColor" value="#00C96B" oninput="dsLivePopPreview()"></div>
+              </div>
+
+              <!-- APPEARANCE -->
+              <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Appearance</div>
+              <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:10px;margin-bottom:14px;align-items:end">
+                <div><label class="ds-lbl">Background</label><input class="ds-inp" style="height:34px;padding:3px;cursor:pointer;width:56px" type="color" id="dsPopBg" value="#070d1a" oninput="dsLivePopPreview()"></div>
+                <div><label class="ds-lbl">Transition</label>
+                  <select class="ds-inp" id="dsPopAnim">
+                    <option>Slide up</option><option>Fade</option><option>Wipe left</option>
+                  </select>
+                </div>
+                <div><label class="ds-lbl">Corner style</label>
+                  <select class="ds-inp" id="dsPopRadius" onchange="dsLivePopPreview()">
+                    <option value="0">Square</option>
+                    <option value="8px">Slightly rounded</option>
+                    <option value="16px" selected>Rounded</option>
+                    <option value="24px">Very rounded</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- INLINE PREVIEW -->
+              <div style="font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Preview</div>
+              <div id="dsPopPreview" style="border-radius:8px;overflow:hidden;border:1px solid var(--border)">
+                <div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#070d1a" id="dsPopPrevHeader">
+                  <span id="dsPopPrevLabel" style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#00C96B">NOW ON COURT</span>
+                  <span style="font-size:9px;color:rgba(255,255,255,.35)">Every <span id="dsPopPrevEvery">15</span>m · <span id="dsPopPrevFor">30</span>s</span>
+                </div>
+                <div style="padding:14px;background:#060c18;display:flex;align-items:center;gap:14px" id="dsPopPrevBody">
+                  <div style="width:40px;height:40px;background:rgba(0,201,107,.15);border:1px solid rgba(0,201,107,.3);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#00C96B;font-family:'DM Mono',monospace;flex-shrink:0">1</div>
+                  <div>
+                    <div style="font-size:13px;font-weight:600;color:#fff">Drop-Ins 3.5–3.9</div>
+                    <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:2px">7:00 – 11:00 AM · 37m remaining</div>
+                  </div>
+                  <div style="margin-left:auto;text-align:right">
+                    <div style="font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.3)">Up Next</div>
+                    <div style="font-size:11px;color:#00CFFF;margin-top:2px">Evening 3.5+ · 6:00 PM</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TEST BUTTON -->
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <button onclick="dsPopTest()" style="flex:1;background:var(--ink);color:#fff;border:none;border-radius:8px;padding:11px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:all.15s">
+                  <span style="font-size:16px">▶</span> Test Pop-Up on Screen
+                </button>
+              </div>
+              <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px">Simulates exactly how it appears on your <span id="dsPopTestSizeLbl" style="color:var(--green);font-weight:600">845×385</span> screen</div>
+
+            </div>
+          </div>
+
+          <!-- POP-UP TEST MODAL (full screen simulation) -->
+          <div id="dsPopModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);align-items:center;justify-content:center">
+            <!-- simulated screen -->
+            <div id="dsPopSimScreen" style="position:relative;background:#111;border-radius:12px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.6);border:2px solid #2a2a2a">
+              <!-- the rest of screen (fake ad zone) -->
+              <div id="dsPopSimAd" style="background:linear-gradient(135deg,#0d2040,#0a1830);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center;opacity:.5">
+                  <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px">Ad Zone</div>
+                  <div style="font-size:9px;color:rgba(255,255,255,.2)">CourtCast Sponsor Content</div>
+                </div>
+              </div>
+              <!-- the pop-up itself, animated in -->
+              <div id="dsPopSimOverlay" style="position:absolute;overflow:hidden">
+                <div id="dsPopSimContent"></div>
+              </div>
+              <!-- close button -->
+              <button onclick="dsPopModalClose()" style="position:absolute;top:10px;right:10px;width:30px;height:30px;background:rgba(255,255,255,.1);border:none;border-radius:50%;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10">×</button>
+            </div>
+            <!-- label below -->
+            <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);text-align:center">
+              <div style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:4px">Simulating <span id="dsPopSimDimsLbl" style="color:rgba(255,255,255,.7)">845×385</span> screen</div>
+              <div id="dsPopSimTimer" style="font-size:22px;font-weight:700;color:#fff;font-family:'DM Mono',monospace"></div>
+              <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:4px">Pop-up dismisses automatically · Click × to close</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── STEP 1: SCORE BUG ── -->
+    <div class="ds-page" id="ds1">
+      <div class="ds-two">
+        <div>
+          <div class="ds-panel">
+            <div class="ds-phd">Elements — drag onto canvas</div>
+            <div id="dsElemBtns">
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'courtNum')">🔢 Court Number</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'eventName')">📋 Event Name</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'status')">🟢 Status</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'timeLeft')">⏱ Time Left</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'clock')">🕐 Current Clock</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'upcoming')">📅 Upcoming Event</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'skillLevel')">⭐ Skill Level</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'waitQueue')">👥 Wait Queue</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'score')">🏆 Live Score</div>
+              <div draggable="true" class="ds-ebtn" ondragstart="dsBcDragStart(event,'divider')">▌ Divider</div>
+            </div>
+          </div>
+          <div class="ds-panel">
+            <div class="ds-phd">Background</div>
+            <div style="margin-bottom:10px"><label class="ds-lbl">Style</label>
+              <select class="ds-inp" id="dsBgStyle" onchange="dsApplyBg()">
+                <option value="dark">Dark navy</option><option value="solid">Solid color</option><option value="gradient">Gradient</option>
+              </select>
+            </div>
+            <div id="dsBgSolid" style="display:none"><label class="ds-lbl">Color</label><input class="ds-inp" style="height:34px;padding:3px;cursor:pointer" type="color" id="dsBgColor" value="#060c18" oninput="dsApplyBg()"></div>
+            <div id="dsBgGrad" style="display:none">
+              <div id="dsGPreview" style="height:30px;border-radius:5px;margin-bottom:8px;border:1px solid var(--border)"></div>
+              <div style="display:flex;gap:8px;align-items:flex-end">
+                <div><label class="ds-lbl">Start</label><input style="width:46px;height:28px;padding:2px;border-radius:5px;border:1px solid var(--border2);cursor:pointer" type="color" id="dsGA" value="#0d2040" oninput="dsApplyBg()"></div>
+                <div><label class="ds-lbl">End</label><input style="width:46px;height:28px;padding:2px;border-radius:5px;border:1px solid var(--border2);cursor:pointer" type="color" id="dsGB" value="#061020" oninput="dsApplyBg()"></div>
+                <div style="flex:1"><label class="ds-lbl">Direction</label><select class="ds-inp" id="dsGDir" onchange="dsApplyBg()"><option value="90deg">→ Horizontal</option><option value="135deg">↘ Diagonal</option><option value="180deg">↓ Vertical</option></select></div>
+              </div>
+            </div>
+          </div>
+          <div class="ds-panel">
+            <div class="ds-phd">Behavior</div>
+            <div class="ds-togrow"><div><div class="ds-toglbl">Countdown goes red</div><div style="font-size:11px;color:var(--muted);margin-top:1px">Score bug turns red when time is almost up</div></div><div class="ds-tog" id="dsRedTog" onclick="dsTog(this,'dsRedOpts')"></div></div>
+            <div id="dsRedOpts" style="display:none;padding:10px 0 4px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+                <div><label class="ds-lbl">Warn under (min)</label><input class="ds-inp" type="number" id="dsRedMins" value="5"></div>
+                <div><label class="ds-lbl">Warning color</label><input class="ds-inp" style="height:34px;padding:3px;cursor:pointer" type="color" id="dsRedColor" value="#ff2222"></div>
+              </div>
+              <button onclick="dsTestCountdown()" style="width:100%;background:var(--ink);color:#fff;border:none;border-radius:7px;padding:9px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:7px">
+                <span>▶</span> Test Countdown Warning
+              </button>
+              <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:5px">Simulates the score bug turning red on your screen</div>
+            </div>
+            <div class="ds-togrow"><div><div class="ds-toglbl">Skill level color coding</div></div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null)"></div></div>
+            <div class="ds-togrow"><div><div class="ds-toglbl">Wait queue count</div></div><div class="ds-tog" onclick="dsTog(this,null)"></div></div>
+          </div>
+
+          <!-- COUNTDOWN TEST MODAL -->
+          <div id="dsCountdownModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);align-items:center;justify-content:center;flex-direction:column;gap:20px">
+            <div style="font-size:11px;color:rgba(255,255,255,.4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:-10px">Score Bug Countdown Warning Simulation</div>
+            <!-- simulated screen -->
+            <div id="dsCdSimScreen" style="position:relative;background:#0a0f1e;border-radius:10px;border:2px solid #1e2a3a;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.6)">
+              <!-- fake ad zone -->
+              <div id="dsCdAdZone" style="background:linear-gradient(135deg,#0d2040,#0a1830);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center;opacity:.4"><div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5)">Ad Zone</div></div>
+              </div>
+              <!-- score bug strip -->
+              <div id="dsCdBugStrip" style="background:#060c18;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:0;transition:background .4s,border-color .4s">
+                <!-- court # -->
+                <div style="padding:0 12px;border-right:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center">
+                  <span style="font-family:'DM Mono',monospace;font-weight:500;color:#00CFFF" id="dsCdCourtNum">1</span>
+                </div>
+                <!-- event -->
+                <div style="flex:1;padding:0 12px;border-right:1px solid rgba(255,255,255,.07)">
+                  <div style="font-weight:500;color:#fff" id="dsCdEvent">P. Hittinger</div>
+                  <div style="color:rgba(255,255,255,.4)" id="dsCdTime">10:00 AM – 11:00 AM</div>
+                </div>
+                <!-- time left — this turns red -->
+                <div style="padding:0 12px;text-align:center;border-right:1px solid rgba(255,255,255,.07)">
+                  <div style="letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35)" id="dsCdTLLbl">Time Left</div>
+                  <div style="font-family:'DM Mono',monospace;font-weight:500;color:#fff;transition:color .4s" id="dsCdTL">4m 30s</div>
+                </div>
+                <!-- upcoming -->
+                <div style="flex:1;padding:0 12px;border-right:1px solid rgba(255,255,255,.07)">
+                  <div style="letter-spacing:1px;text-transform:uppercase;color:#00CFFF" id="dsCdUpLbl">Upcoming</div>
+                  <div style="color:#fff">Demo Clinic · 12:30 PM</div>
+                </div>
+                <!-- clock -->
+                <div style="padding:0 14px;text-align:right">
+                  <div style="letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35)">Time</div>
+                  <div style="font-family:'DM Mono',monospace;color:#fff" id="dsCdClock">--</div>
+                </div>
+              </div>
+            </div>
+            <!-- controls below -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+              <div style="font-size:14px;color:rgba(255,255,255,.5)" id="dsCdStatusMsg">Countdown running — warning triggers under <span id="dsCdWarnAt">5</span> min</div>
+              <div style="display:flex;gap:10px">
+                <button onclick="dsCdSetTime(300)" style="background:rgba(255,255,255,.1);border:none;color:#fff;border-radius:6px;padding:7px 16px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">5 min</button>
+                <button onclick="dsCdSetTime(180)" style="background:rgba(255,255,255,.1);border:none;color:#fff;border-radius:6px;padding:7px 16px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">3 min</button>
+                <button onclick="dsCdSetTime(60)" style="background:rgba(255,255,255,.1);border:none;color:#fff;border-radius:6px;padding:7px 16px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">1 min</button>
+                <button onclick="dsCdSetTime(10)" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,68,68,.3);color:#ff6666;border-radius:6px;padding:7px 16px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif">10s (trigger now)</button>
+              </div>
+              <button onclick="dsCdClose()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);border-radius:6px;padding:7px 24px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:4px">Close</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="background:#050810;border-radius:12px;padding:16px;margin-bottom:16px">
+            <div style="font-size:10px;color:rgba(255,255,255,.28);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between">
+              <span>Score Bug Canvas — drag elements here</span>
+              <span style="color:#00CFFF;font-family:'DM Mono',monospace" id="dsBugDimsLbl">845 × 71</span>
+            </div>
+            <div id="dsBugCanvas" style="position:relative;height:72px;border-radius:6px;border:1.5px dashed #2a3a4a;background:#060c18;overflow:hidden"
+              ondragover="event.preventDefault();document.getElementById('dsBugCanvas').style.borderColor='#00C96B'"
+              ondragleave="document.getElementById('dsBugCanvas').style.borderColor='#2a3a4a'"
+              ondrop="dsBcDrop(event)">
+              <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:20px 20px"></div>
+              <div id="dsBcHint" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(255,255,255,.2);pointer-events:none">← Drag elements from the left panel and drop them here</div>
+            </div>
+            <div id="dsPropBar" style="display:none;background:#0a1020;border-radius:6px;padding:8px 12px;margin-top:8px;display:none;gap:10px;align-items:center;flex-wrap:wrap">
+              <span style="font-size:10px;color:rgba(255,255,255,.4)">Text</span><input id="dsPropText" style="background:#0d1828;border:1px solid #2a3a4a;border-radius:5px;color:#fff;padding:4px 8px;font-size:12px;font-family:'DM Mono',monospace;outline:none;width:120px" oninput="dsUpdateProp()">
+              <span style="font-size:10px;color:rgba(255,255,255,.4)">Size</span><input id="dsPropSize" type="number" style="background:#0d1828;border:1px solid #2a3a4a;border-radius:5px;color:#fff;padding:4px 8px;font-size:12px;font-family:'DM Mono',monospace;outline:none;width:52px" oninput="dsUpdateProp()">
+              <span style="font-size:10px;color:rgba(255,255,255,.4)">Color</span><input type="color" id="dsPropColor" style="width:34px;height:28px;padding:2px;border-radius:5px;border:1px solid #2a3a4a;cursor:pointer;background:#0d1828" oninput="dsUpdateProp()">
+              <button onclick="dsDeleteSel()" style="background:rgba(220,50,50,.15);border:1px solid rgba(220,50,50,.3);color:#e03535;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">Remove</button>
+            </div>
+            <div style="font-size:10px;color:rgba(255,255,255,.2);text-align:center;margin-top:8px">Click element to select · Drag right edge to resize · Drag body to move</div>
+          </div>
+          <div class="ds-panel">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+              <div class="ds-phd" style="margin-bottom:0">Skill Level Colors</div>
+              <div style="display:flex;gap:6px">
+                <button onclick="dsAddSkill()" style="background:#e8f5ee;border:1px solid #b8e4ca;color:var(--green);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">+ Add</button>
+                <button onclick="dsRemoveSkill()" style="background:#fef2f2;border:1px solid #fecaca;color:#e03535;border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">− Remove</button>
+                <button onclick="dsTestSkill()" style="background:var(--bg2);border:1px solid var(--border2);color:var(--ink2);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">▶ Test</button>
+              </div>
+            </div>
+            <div id="dsSkillGrid"></div>
+            <!-- test preview -->
+            <div id="dsSkillTest" style="display:none;margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid var(--border)">
+              <div style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:8px 12px;background:var(--bg2);border-bottom:1px solid var(--border)">Skill Level Preview — how they appear on court cards</div>
+              <div id="dsSkillTestCards" style="padding:10px;display:flex;gap:8px;flex-wrap:wrap;background:#070d1a"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STEP 2: ALL COURTS ── -->
+    <div class="ds-page" id="ds2">
+      <div class="ds-two">
+        <div>
+          <div class="ds-panel">
+            <div class="ds-phd">Number of Courts</div>
+            <div style="font-size:52px;font-weight:700;color:var(--green);font-family:'DM Mono',monospace;text-align:center;margin:8px 0 12px" id="dsCourtNum">16</div>
+            <div style="display:flex;justify-content:center;gap:10px">
+              <button class="ds-adjbtn" onclick="dsAdjC(-4)">−4</button>
+              <button class="ds-adjbtn" onclick="dsAdjC(-1)">−</button>
+              <button class="ds-adjbtn" onclick="dsAdjC(1)">+</button>
+              <button class="ds-adjbtn" onclick="dsAdjC(4)">+4</button>
+            </div>
+          </div>
+          <div class="ds-panel">
+            <div class="ds-phd">Card Fields</div>
+            <div id="dsFldList">
+              <div class="ds-fldrow" data-f="inProgress"><div class="ds-toglbl">● In Progress label</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="eventName"><div class="ds-toglbl">Event Name</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="upNext"><div class="ds-toglbl">Up Next event</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="bookedBy"><div class="ds-toglbl">Booked By</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="skillLevel"><div class="ds-toglbl">Skill level badge</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="timeRange"><div class="ds-toglbl">Time range</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="timeLeft"><div class="ds-toglbl">Time left countdown</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="waitQueue"><div class="ds-toglbl">Wait queue count</div><div class="ds-tog" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="courtNum"><div class="ds-toglbl">Large court number</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+              <div class="ds-fldrow" data-f="colorStrip"><div class="ds-toglbl">Skill color strip</div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null);dsRenderCourts()"></div></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="background:#070d1a;border-radius:12px;padding:10px">
+            <div style="font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between">
+              <span>Courts Board Preview</span>
+              <span style="font-family:'DM Mono',monospace;color:#00CFFF" id="dsCourtsDimsLbl">16 courts</span>
+            </div>
+            <div id="dsCgrid" style="display:grid;gap:6px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── STEP 3: SCOREBOARD + CONTROLLER ── -->
+    <div class="ds-page" id="ds3">
+      <!-- Settings row above -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:16px">
+        <div class="ds-panel" style="margin-bottom:0">
+          <div class="ds-phd">Colors</div>
+          <div style="margin-bottom:8px"><label class="ds-lbl">Background</label><input class="ds-inp" style="height:32px;padding:3px;cursor:pointer" type="color" id="dsSbBg" value="#070d1a" oninput="dsUpdateSb()"></div>
+          <div style="margin-bottom:8px"><label class="ds-lbl">Team 1 color</label><input class="ds-inp" style="height:32px;padding:3px;cursor:pointer" type="color" id="dsT1c" value="#4A9EFF" oninput="dsUpdateSb()"></div>
+          <div><label class="ds-lbl">Team 2 color</label><input class="ds-inp" style="height:32px;padding:3px;cursor:pointer" type="color" id="dsT2c" value="#FF6B6B" oninput="dsUpdateSb()"></div>
+        </div>
+        <div class="ds-panel" style="margin-bottom:0">
+          <div class="ds-phd">Teams</div>
+          <div style="margin-bottom:8px"><label class="ds-lbl">Left team</label><input class="ds-inp" type="text" id="dsT1n" value="LEFT TEAM" oninput="dsUpdateSb()"></div>
+          <div style="margin-bottom:8px"><label class="ds-lbl">Left players</label><input class="ds-inp" type="text" id="dsT1p" value="A. Johnson / M. Torres" oninput="dsUpdateSb()"></div>
+          <div><label class="ds-lbl">Event name</label><input class="ds-inp" type="text" id="dsSbEv" value="Court 1 — Brenden's Crew" oninput="dsUpdateSb()"></div>
+        </div>
+        <div class="ds-panel" style="margin-bottom:0">
+          <div class="ds-phd">Teams (cont.)</div>
+          <div style="margin-bottom:8px"><label class="ds-lbl">Right team</label><input class="ds-inp" type="text" id="dsT2n" value="RIGHT TEAM" oninput="dsUpdateSb()"></div>
+          <div style="margin-bottom:8px"><label class="ds-lbl">Right players</label><input class="ds-inp" type="text" id="dsT2p" value="K. Williams / D. Park" oninput="dsUpdateSb()"></div>
+          <div><label class="ds-lbl">Score font</label><select class="ds-inp" id="dsSbFont" onchange="dsUpdateSb()"><option value="'DM Mono',monospace">DM Mono</option><option value="Impact,sans-serif">Impact</option><option value="'Bebas Neue',sans-serif">Bebas Neue</option></select></div>
+        </div>
+        <div class="ds-panel" style="margin-bottom:0">
+          <div class="ds-phd">Options</div>
+          <div class="ds-togrow"><div class="ds-toglbl">Top info band</div><div class="ds-tog ds-tog-on" id="dsTopTog" onclick="dsTog(this,null);dsUpdateSb()"></div></div>
+          <div class="ds-togrow"><div class="ds-toglbl">Bottom stats band</div><div class="ds-tog ds-tog-on" id="dsBotTog" onclick="dsTog(this,null);dsUpdateSb()"></div></div>
+          <div class="ds-togrow"><div class="ds-toglbl">Game pips</div><div class="ds-tog ds-tog-on" id="dsPipTog" onclick="dsTog(this,null);dsUpdateSb()"></div></div>
+          <div class="ds-togrow"><div class="ds-toglbl">Player names</div><div class="ds-tog ds-tog-on" id="dsPlTog" onclick="dsTog(this,null);dsUpdateSb()"></div></div>
+          <div class="ds-togrow">
+            <div>
+              <div class="ds-toglbl">Skill level color band</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:1px">Tints score bug to match event skill level</div>
+            </div>
+            <div class="ds-tog" id="dsSkillBandTog" onclick="dsTog(this,null);dsUpdateSb()"></div>
+          </div>
+          <div id="dsSkillBandOpts" style="margin-top:10px;padding:10px;background:var(--bg2);border-radius:8px;border:1px solid var(--border)">
+            <div style="font-size:11px;color:var(--ink2);margin-bottom:8px;font-weight:500">Preview a skill level:</div>
+            <div style="display:flex;gap:5px;flex-wrap:wrap" id="dsSkillBandBtns"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scoreboard + phone: scoreboard fixed-width centered, phone alongside -->
+      <div style="display:flex;gap:16px;align-items:flex-start;justify-content:center">
+
+        <!-- SCOREBOARD — fixed 520px max, centered -->
+        <div style="background:#050810;border-radius:12px;padding:16px;flex-shrink:0">
+          <div style="font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:16px">
+            <span>Scoreboard Preview</span>
+            <span style="font-family:'DM Mono',monospace;color:#00CFFF;white-space:nowrap" id="dsSbDimsLbl">845 × 385</span>
+          </div>
+          <div id="dsSbClip" style="overflow:hidden;border-radius:6px;position:relative">
+            <div id="dsSbScaleWrap" style="transform-origin:top left">
+              <div id="dsSbInner"></div>
+            </div>
+          </div>
+          <div style="font-size:10px;color:rgba(255,255,255,.2);text-align:center;margin-top:10px">Use the phone controller → to update scores live</div>
+        </div>
+
+        <!-- PHONE CONTROLLER -->
+        <div>
+          <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.3px;margin-bottom:10px">Live Controller</div>
+          <div style="background:#111;border-radius:26px;padding:13px;border:2px solid #222">
+            <div style="width:50px;height:4px;background:#1e1e1e;border-radius:3px;margin:0 auto 11px"></div>
+            <div style="background:#070d1a;border-radius:13px;overflow:hidden">
+              <div style="background:#040911;padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.06);text-align:center">
+                <div style="font-size:11px;font-weight:600;color:#fff">Court 1 Controller</div>
+                <div style="font-size:8px;color:rgba(255,255,255,.28);margin-top:1px">Scores update instantly</div>
+              </div>
+              <div style="display:flex;margin:6px;border-radius:5px;overflow:hidden;border:1px solid rgba(255,255,255,.1)">
+                <button class="ds-phtb ds-phtb-on" onclick="dsPhTab(this)">Singles</button>
+                <button class="ds-phtb" onclick="dsPhTab(this)">Doubles</button>
+              </div>
+              <div style="padding:6px 10px 3px">
+                <div style="display:flex;align-items:center;gap:5px">
+                  <div style="flex:1;text-align:center">
+                    <div style="font-size:6.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1px">Left</div>
+                    <div style="font-size:38px;font-family:'DM Mono',monospace;font-weight:500;line-height:1;color:#4A9EFF" id="dsPhSL">0</div>
+                    <div style="display:flex;gap:3px;justify-content:center;margin-top:3px">
+                      <button class="ds-phbtn ds-phbtn-p" onclick="dsPhAdj('L',1)">+</button>
+                      <button class="ds-phbtn ds-phbtn-m" onclick="dsPhAdj('L',-1)">−</button>
+                    </div>
+                  </div>
+                  <div style="font-size:9px;color:rgba(255,255,255,.15)">VS</div>
+                  <div style="flex:1;text-align:center">
+                    <div style="font-size:6.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:1px">Right</div>
+                    <div style="font-size:38px;font-family:'DM Mono',monospace;font-weight:500;line-height:1;color:#FF6B6B" id="dsPhSR">0</div>
+                    <div style="display:flex;gap:3px;justify-content:center;margin-top:3px">
+                      <button class="ds-phbtn ds-phbtn-p" onclick="dsPhAdj('R',1)">+</button>
+                      <button class="ds-phbtn ds-phbtn-m" onclick="dsPhAdj('R',-1)">−</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="margin:3px 7px 4px;background:rgba(255,255,255,.04);border-radius:5px;padding:5px 8px">
+                <div style="display:flex;justify-content:space-between;font-size:7.5px;padding:1px 0"><span style="color:rgba(255,255,255,.28)">Status</span><span style="color:#00FF85;font-weight:600">● Live</span></div>
+                <div style="display:flex;justify-content:space-between;font-size:7.5px;padding:1px 0"><span style="color:rgba(255,255,255,.28)">Time left</span><span style="color:#fff;font-weight:600" id="dsPhTL">--</span></div>
+              </div>
+              <button onclick="dsPhSwap()" style="width:calc(100% - 13px);margin:0 6.5px 4px;padding:6px;border-radius:5px;font-size:9px;font-weight:600;cursor:pointer;background:#0f1e35;border:1px solid rgba(0,207,255,.2);color:#00CFFF;font-family:'DM Sans',sans-serif">⇄ Swap Sides</button>
+              <button onclick="dsPhReset()" style="width:calc(100% - 13px);margin:0 6.5px 8px;padding:6px;border-radius:5px;font-size:9px;font-weight:600;cursor:pointer;background:rgba(220,50,50,.08);border:1px solid rgba(220,50,50,.2);color:#ff6666;font-family:'DM Sans',sans-serif">✕ Reset to 0–0</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end dsPages -->
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:20px;border-top:1px solid var(--border)">
+    <button class="ds-navbtn ds-navbtn-sec" id="dsPrevBtn" onclick="dsNav(-1)" style="visibility:hidden">← Previous</button>
+    <div style="font-size:12px;color:var(--muted)" id="dsStepLbl">Step 1 of 4</div>
+    <button class="ds-navbtn" id="dsNextBtn" onclick="dsNav(1)">Next Step →</button>
+  </div>
+</section>
+
+
+<script src="designer.js"></script>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div style="text-align:center;">
+    <div class="section-label" style="justify-content:center;display:flex;">Pricing</div>
+    <h2 class="section-title" style="text-align:center;">SIMPLE. FLAT RATE.</h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center;">One monthly subscription per facility. No per-screen fees, no per-court charges.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-tier">Starter</div>
+      <div class="pricing-name">Display Only</div>
+      <div class="pricing-price"><span class="pricing-dollar">$</span><span class="pricing-amount">49</span><span class="pricing-period">/ month</span></div>
+      <div class="pricing-desc">All Courts Overview for up to 16 courts. Perfect for lobby and front desk screens.</div>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> All Courts live display</li>
+        <li><span class="check">✓</span> CourtReserve API sync</li>
+        <li><span class="check">✓</span> Custom club branding</li>
+        <li><span class="check">✓</span> Unlimited screens</li>
+        <li><span class="check">✓</span> Auto-refresh every 60s</li>
+      </ul>
+      <a href="#contact" class="pricing-btn outline">Get Started</a>
+    </div>
+    <div class="pricing-card popular">
+      <div class="popular-badge">Most Popular</div>
+      <div class="pricing-tier">Pro</div>
+      <div class="pricing-name">Full Suite</div>
+      <div class="pricing-price"><span class="pricing-dollar">$</span><span class="pricing-amount">99</span><span class="pricing-period">/ month</span></div>
+      <div class="pricing-desc">Everything in Starter, plus Score Bugs and Scoreboards for every court.</div>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> Everything in Starter</li>
+        <li><span class="check">✓</span> Score Bug per-court displays</li>
+        <li><span class="check">✓</span> Live Scoreboards</li>
+        <li><span class="check">✓</span> Mobile score controllers</li>
+        <li><span class="check">✓</span> Firebase real-time scoring</li>
+        <li><span class="check">✓</span> Priority support</li>
+      </ul>
+      <a href="#contact" class="pricing-btn solid">Book a Demo</a>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-tier">Enterprise</div>
+      <div class="pricing-name">Multi-Venue</div>
+      <div class="pricing-price"><span class="pricing-amount" style="font-size:2.5rem">Custom</span></div>
+      <div class="pricing-desc">Multiple locations, white-label options, or custom development for your platform.</div>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> Everything in Pro</li>
+        <li><span class="check">✓</span> Multi-location management</li>
+        <li><span class="check">✓</span> White-label / reseller options</li>
+        <li><span class="check">✓</span> Custom integrations</li>
+        <li><span class="check">✓</span> Dedicated support</li>
+      </ul>
+      <a href="#contact" class="pricing-btn outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="section-label">Get Started</div>
+  <h2 class="section-title">YOUR CLUB DESERVES<br>A LIVE DISPLAY.</h2>
+  <p class="section-sub">We'll connect to your CourtReserve account and have a live demo running at your facility within a week. No long contracts. Cancel anytime.</p>
+  <div class="cta-buttons">
+    <a href="/cdn-cgi/l/email-protection#afc7cac3c3c0efccc0dadddbcccedcdb81c6c0" class="btn-cta-primary">Book a Free Demo →</a>
+    <a href="/cdn-cgi/l/email-protection#adc5c8c1c1c2edcec2d8dfd9ceccded983c4c2" class="btn-cta-secondary">✉ <span class="__cf_email__" data-cfemail="afc7cac3c3c0efccc0dadddbcccedcdb81c6c0">[email&#160;protected]</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">Court<span>Cast</span></a>
+      <p class="footer-brand-note">Real-time court status displays, live scoreboards, and score bugs — driven by your existing <a href="https://courtreserve.com" target="_blank" rel="noopener">CourtReserve</a> data. Zero extra data entry.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Product</div>
+      <ul class="footer-col-links">
+        <li><a href="#products">All Courts Overview</a></li>
+        <li><a href="#products">Live Scoreboard</a></li>
+        <li><a href="#products">Score Bug Overlay</a></li>
+        <li><a href="#designer">Display Designer</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-col-links">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Book a Demo</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Integrations</div>
+      <ul class="footer-col-links">
+        <li><a href="https://courtreserve.com" target="_blank" rel="noopener">CourtReserve</a></li>
+        <li><a href="#products">Pickleball Clubs</a></li>
+        <li><a href="#products">Tennis Facilities</a></li>
+        <li><a href="#products">Multi-Sport Venues</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="#" class="footer-logo" style="font-size:1.1rem">Court<span>Cast</span></a>
+    <p class="footer-bottom-note">© 2025 CourtCast. Built for clubs running <a href="https://courtreserve.com" target="_blank" rel="noopener">CourtReserve</a>.</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
