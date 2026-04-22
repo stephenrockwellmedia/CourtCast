@@ -196,8 +196,20 @@ function dsUpdateProp(){
   el.size=+document.getElementById('dsPropSize').value||13;
   el.color=document.getElementById('dsPropColor').value;
   var fs=document.getElementById('dsPropFont');
-  if(fs&&fs.value)el.font=fs.value;
-  dsRenderBug();
+  if(fs&&fs.value) el.font=fs.value;
+
+  // Direct DOM update — avoids full re-render losing selection
+  var domEl=document.querySelectorAll('#dsBugCanvas .ds-bc-el')[dsSelIdx];
+  if(domEl){
+    var span=domEl.querySelector('span');
+    if(span){
+      span.style.fontFamily=el.font;
+      span.style.fontSize=el.size+'px';
+      span.style.color=el.color;
+      span.textContent=(el.type==='clock')?dsFmtT():(el.type==='timeLeft')?dsBugTL():el.text;
+    }
+    domEl.style.minHeight=(el.size+12)+'px';
+  }
 }
 function dsDeleteSel(){if(dsSelIdx<0)return;dsBcElems.splice(dsSelIdx,1);dsSelIdx=-1;dsRenderBug();dsHideProp();}
 function dsBcDragStart(e,type){dsDragType=type;e.dataTransfer.effectAllowed='copy';}
