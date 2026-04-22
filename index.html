@@ -622,6 +622,15 @@
               <span style="font-size:10px;color:rgba(255,255,255,.4)">Text</span><input id="dsPropText" style="background:#0d1828;border:1px solid #2a3a4a;border-radius:5px;color:#fff;padding:4px 8px;font-size:12px;font-family:'DM Mono',monospace;outline:none;width:120px" oninput="dsUpdateProp()">
               <span style="font-size:10px;color:rgba(255,255,255,.4)">Size</span><input id="dsPropSize" type="number" style="background:#0d1828;border:1px solid #2a3a4a;border-radius:5px;color:#fff;padding:4px 8px;font-size:12px;font-family:'DM Mono',monospace;outline:none;width:52px" oninput="dsUpdateProp()">
               <span style="font-size:10px;color:rgba(255,255,255,.4)">Color</span><input type="color" id="dsPropColor" style="width:34px;height:28px;padding:2px;border-radius:5px;border:1px solid #2a3a4a;cursor:pointer;background:#0d1828" oninput="dsUpdateProp()">
+              <span style="font-size:10px;color:rgba(255,255,255,.4)">Font</span>
+              <select id="dsPropFont" onchange="dsUpdateProp()" style="background:#0d1828;border:1px solid #2a3a4a;border-radius:5px;color:#fff;padding:4px 8px;font-size:12px;outline:none;cursor:pointer">
+                <option value="'DM Sans',sans-serif">DM Sans</option>
+                <option value="'Bebas Neue',sans-serif">Bebas Neue</option>
+                <option value="'DM Mono',monospace">DM Mono</option>
+                <option value="Impact,sans-serif">Impact</option>
+                <option value="Arial,sans-serif">Arial</option>
+                <option value="Georgia,serif">Georgia</option>
+              </select>
               <button onclick="dsDeleteSel()" style="background:rgba(220,50,50,.15);border:1px solid rgba(220,50,50,.3);color:#e03535;border-radius:5px;padding:4px 10px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">Remove</button>
             </div>
             <div style="font-size:10px;color:rgba(255,255,255,.2);text-align:center;margin-top:8px">Click element to select · Drag right edge to resize · Drag body to move</div>
