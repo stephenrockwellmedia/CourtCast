@@ -195,6 +195,16 @@
           <div class="demo-feature-icon">🎨</div>
           <div class="demo-feature-text"><h5>Custom Branded</h5><p>Your logo, your colors. Looks like your club built it in-house — because it's built specifically for your club.</p></div>
         </div>
+        <div class="bday-demo-row">
+          <div class="bday-demo-info">
+            <span>🎂</span>
+            <div>
+              <h5>Birthday Announcements</h5>
+              <p>Full-screen overlay with balloons — auto-triggered from your member data.</p>
+            </div>
+          </div>
+          <button class="bday-preview-btn" onclick="showBdayDemo()">Preview →</button>
+        </div>
       </div>
     </div>
     <div class="demo-visual">
@@ -792,6 +802,18 @@
   </div>
 </section>
 
+
+<!-- BIRTHDAY OVERLAY -->
+<div id="bdayOverlay">
+  <div class="balloon-container" id="bdayBalloons"></div>
+  <div class="bdayBox">
+    <button class="bday-close" onclick="closeBdayOverlay()">✕</button>
+    <span class="bdayEmoji">🎂</span>
+    <div class="bdayTitle">Happy Birthday!</div>
+    <div class="bdayNames">Sarah M.</div>
+    <div class="bdaySub">From everyone at LevelUp Pickleball Club</div>
+  </div>
+</div>
 
 <script src="designer.js"></script>
 

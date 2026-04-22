@@ -83,3 +83,48 @@ document.addEventListener('click',function(e){
   updateHeroClock();
   setInterval(updateHeroClock,30000);
 })();
+
+/* ── BIRTHDAY OVERLAY ── */
+var BALLOON_COLORS = ['#ff6b9d','#ff9de2','#c084fc','#818cf8','#34d399','#fbbf24','#f87171','#60a5fa','#a78bfa','#fb923c'];
+
+function spawnBalloons() {
+  var container = document.getElementById('bdayBalloons');
+  if (!container) return;
+  container.innerHTML = '';
+  for (var i = 0; i < 18; i++) {
+    (function(idx) {
+      setTimeout(function() {
+        var b = document.createElement('div');
+        b.className = 'balloon';
+        b.style.left = (5 + Math.random() * 90) + '%';
+        b.style.background = BALLOON_COLORS[Math.floor(Math.random() * BALLOON_COLORS.length)];
+        b.style.setProperty('--sway', (Math.random() > 0.5 ? 1 : -1) * (15 + Math.random() * 40) + 'px');
+        b.style.animationDuration = (4.5 + Math.random() * 3).toFixed(1) + 's';
+        b.style.animationDelay = (Math.random() * 2).toFixed(2) + 's';
+        container.appendChild(b);
+      }, idx * 120);
+    })(i);
+  }
+}
+
+function showBdayDemo() {
+  var overlay = document.getElementById('bdayOverlay');
+  if (!overlay) return;
+  spawnBalloons();
+  overlay.classList.add('active');
+}
+
+function closeBdayOverlay() {
+  var overlay = document.getElementById('bdayOverlay');
+  if (!overlay) return;
+  overlay.classList.remove('active');
+  setTimeout(function() {
+    var c = document.getElementById('bdayBalloons');
+    if (c) c.innerHTML = '';
+  }, 700);
+}
+
+// Close on backdrop click
+document.getElementById('bdayOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeBdayOverlay();
+});

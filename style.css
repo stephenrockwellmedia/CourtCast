@@ -338,3 +338,97 @@ select.ds-inp option{background:#fff;color:var(--ink)}
 .ds-phbtn-p{background:#00C96B;color:#fff}.ds-phbtn-m{background:#1e2535;color:#555}
 .ds-phbtn:active{transform:scale(.85)}
 @media(max-width:900px){.ds-two{grid-template-columns:1fr}#ds0>div{grid-template-columns:1fr!important}}
+
+/* ── BIRTHDAY OVERLAY ── */
+#bdayOverlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10000; background: rgba(0,0,0,.88);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 600ms ease; overflow: hidden;
+}
+#bdayOverlay.active { opacity: 1; pointer-events: auto; }
+
+.bdayBox {
+  background: linear-gradient(135deg, #1a0533, #2d0a5e);
+  border-radius: 30px; padding: 50px 80px 60px;
+  max-width: 75%; text-align: center; color: #fff;
+  position: relative; z-index: 2;
+  box-shadow: 0 0 20px rgba(255,100,200,.5), 0 0 50px rgba(200,50,255,.4), 0 0 90px rgba(150,0,255,.3);
+}
+#bdayOverlay.active .bdayBox {
+  animation: bdayPopIn .9s cubic-bezier(.18,.89,.32,1) forwards, bdayGlow 3s ease-in-out infinite;
+}
+@keyframes bdayPopIn {
+  0%   { transform: scale(.7); opacity: 0; }
+  80%  { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bdayGlow {
+  0%,100% { box-shadow: 0 0 20px rgba(255,100,200,.5), 0 0 50px rgba(200,50,255,.4), 0 0 90px rgba(150,0,255,.3); }
+  50%      { box-shadow: 0 0 40px rgba(255,150,255,.9), 0 0 80px rgba(220,80,255,.7), 0 0 120px rgba(180,30,255,.6); }
+}
+.bdayEmoji { font-size: 72px; display: block; margin-bottom: 10px; }
+.bdayTitle {
+  font-size: 42px; font-weight: 900; letter-spacing: .05em;
+  background: linear-gradient(90deg, #ff9de2, #c084fc, #fbbf24);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 16px;
+}
+.bdayNames { font-size: 34px; font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.3; }
+.bdaySub { font-size: 20px; color: rgba(255,255,255,.75); font-weight: 600; }
+.bday-close {
+  position: absolute; top: 16px; right: 20px;
+  background: rgba(255,255,255,.15); border: none; border-radius: 50%;
+  width: 36px; height: 36px; color: #fff; font-size: 18px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background .2s; font-family: inherit;
+}
+.bday-close:hover { background: rgba(255,255,255,.3); }
+
+/* Balloons */
+.balloon-container { position: fixed; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 9999; overflow: hidden; }
+.balloon {
+  position: absolute; bottom: -120px;
+  width: 50px; height: 65px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  opacity: 0; animation: bdayFloatUp 6s ease-in forwards;
+}
+.balloon::after {
+  content: ""; position: absolute; bottom: -18px; left: 50%;
+  transform: translateX(-50%); width: 1px; height: 18px;
+  background: rgba(255,255,255,.5);
+}
+@keyframes bdayFloatUp {
+  0%   { bottom: -120px; opacity: 0; transform: translateX(0) rotate(-4deg); }
+  10%  { opacity: .9; }
+  50%  { transform: translateX(var(--sway, 20px)) rotate(4deg); }
+  80%  { opacity: .85; }
+  100% { bottom: 110vh; opacity: 0; transform: translateX(0) rotate(-4deg); }
+}
+
+/* Birthday demo card in marketing section */
+.bday-demo-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; background: linear-gradient(135deg, #1a0533, #2d0a5e);
+  border-radius: 12px; padding: 18px 22px; margin-top: 16px;
+  border: 1px solid rgba(200,50,255,.3);
+}
+.bday-demo-info { display: flex; align-items: center; gap: 14px; }
+.bday-demo-info span { font-size: 1.8rem; }
+.bday-demo-info h5 { font-size: .95rem; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.bday-demo-info p { font-size: .82rem; color: rgba(255,255,255,.55); font-weight: 300; margin: 0; }
+.bday-preview-btn {
+  background: linear-gradient(90deg, #c084fc, #f472b6);
+  color: #fff; border: none; border-radius: 8px;
+  padding: 10px 20px; font-size: .85rem; font-weight: 700;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  white-space: nowrap; transition: opacity .2s; flex-shrink: 0;
+}
+.bday-preview-btn:hover { opacity: .85; }
+@media (max-width: 600px) {
+  .bdayBox { padding: 36px 28px 44px; max-width: 92%; }
+  .bdayTitle { font-size: 28px; }
+  .bdayNames { font-size: 24px; }
+  .bday-demo-row { flex-direction: column; align-items: flex-start; }
+}
