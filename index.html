@@ -195,16 +195,6 @@
           <div class="demo-feature-icon">🎨</div>
           <div class="demo-feature-text"><h5>Custom Branded</h5><p>Your logo, your colors. Looks like your club built it in-house — because it's built specifically for your club.</p></div>
         </div>
-        <div class="bday-demo-row">
-          <div class="bday-demo-info">
-            <span>🎂</span>
-            <div>
-              <h5>Birthday Announcements</h5>
-              <p>Full-screen overlay with balloons — auto-triggered from your member data.</p>
-            </div>
-          </div>
-          <button class="bday-preview-btn" onclick="showBdayDemo()">Preview →</button>
-        </div>
       </div>
     </div>
     <div class="demo-visual">
@@ -551,6 +541,18 @@
             </div>
             <div class="ds-togrow"><div><div class="ds-toglbl">Skill level color coding</div></div><div class="ds-tog ds-tog-on" onclick="dsTog(this,null)"></div></div>
             <div class="ds-togrow"><div><div class="ds-toglbl">Wait queue count</div></div><div class="ds-tog" onclick="dsTog(this,null)"></div></div>
+            <div class="ds-togrow"><div><div class="ds-toglbl">Birthday announcements</div><div style="font-size:11px;color:var(--muted);margin-top:2px">Celebration overlay with balloons for member birthdays</div></div><div class="ds-tog" id="dsBdayTog" onclick="dsTog(this,'dsBdayOpts')"></div></div>
+            <div id="dsBdayOpts" style="display:none;padding:10px 0 4px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+                <div><label class="ds-lbl">Show every (minutes)</label><input class="ds-inp" type="number" id="dsBdayEvery" value="15" min="1"></div>
+                <div><label class="ds-lbl">Duration (seconds)</label><input class="ds-inp" type="number" id="dsBdayDur" value="10" min="3"></div>
+              </div>
+              <div style="margin-bottom:10px"><label class="ds-lbl">Preview name</label><input class="ds-inp" type="text" id="dsBdayName" value="Sarah M." placeholder="e.g. Sarah M."></div>
+              <button onclick="dsBdayTest()" style="width:100%;background:linear-gradient(90deg,#c084fc,#f472b6);color:#fff;border:none;border-radius:7px;padding:9px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;display:flex;align-items:center;justify-content:center;gap:7px">
+                <span>🎂</span> Test Birthday Overlay
+              </button>
+              <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:5px">Simulates exactly how it appears on your screen</div>
+            </div>
           </div>
 
           <!-- COUNTDOWN TEST MODAL -->
@@ -807,7 +809,7 @@
 <div id="bdayOverlay">
   <div class="balloon-container" id="bdayBalloons"></div>
   <div class="bdayBox">
-    <button class="bday-close" onclick="closeBdayOverlay()">✕</button>
+    <button class="bday-close" onclick="dsBdayClose()">✕</button>
     <span class="bdayEmoji">🎂</span>
     <div class="bdayTitle">Happy Birthday!</div>
     <div class="bdayNames">Sarah M.</div>

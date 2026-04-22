@@ -699,3 +699,42 @@ setInterval(function(){
 /* init */
 dsUpdateZoneUI();
 dsInitMockDrag();
+
+/* ── BIRTHDAY OVERLAY ── */
+var DS_BALLOON_COLORS = ['#ff6b9d','#ff9de2','#c084fc','#818cf8','#34d399','#fbbf24','#f87171','#60a5fa','#a78bfa','#fb923c'];
+
+function dsBdaySpawnBalloons(){
+  var c=document.getElementById('bdayBalloons'); if(!c) return; c.innerHTML='';
+  for(var i=0;i<18;i++){ (function(idx){
+    setTimeout(function(){
+      var b=document.createElement('div'); b.className='balloon';
+      b.style.left=(5+Math.random()*90)+'%';
+      b.style.background=DS_BALLOON_COLORS[Math.floor(Math.random()*DS_BALLOON_COLORS.length)];
+      b.style.setProperty('--sway',(Math.random()>.5?1:-1)*(15+Math.random()*40)+'px');
+      b.style.animationDuration=(4.5+Math.random()*3).toFixed(1)+'s';
+      b.style.animationDelay=(Math.random()*2).toFixed(2)+'s';
+      c.appendChild(b);
+    },idx*120);
+  })(i); }
+}
+
+function dsBdayTest(){
+  var overlay=document.getElementById('bdayOverlay'); if(!overlay) return;
+  var nameEl=document.getElementById('bdayNames');
+  var inputEl=document.getElementById('dsBdayName');
+  if(nameEl&&inputEl) nameEl.textContent=inputEl.value||'Sarah M.';
+  dsBdaySpawnBalloons();
+  overlay.classList.add('active');
+  var dur=(+(document.getElementById('dsBdayDur')||{value:10}).value||10)*1000;
+  setTimeout(function(){ dsBdayClose(); }, dur);
+}
+
+function dsBdayClose(){
+  var overlay=document.getElementById('bdayOverlay'); if(!overlay) return;
+  overlay.classList.remove('active');
+  setTimeout(function(){ var c=document.getElementById('bdayBalloons'); if(c) c.innerHTML=''; },700);
+}
+
+document.getElementById('bdayOverlay').addEventListener('click',function(e){
+  if(e.target===this) dsBdayClose();
+});
